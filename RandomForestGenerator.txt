@@ -1,0 +1,15 @@
+global proc CreateForest()
+{
+    for( $i=0 ; $i<= rand(30 , 100) ; $i++)
+    { 
+        float $randnumberR = rand(1.5,4);
+        float $randnumberX = rand(-15,15);
+        float $randnumberZ = rand(-15,15);
+        polyCone -r $randnumberR -h 10 -sx 20 -sy 1 -sz 0 -ax 0 1 0 -rcp 0 -cuv 3 -ch 1;  
+        xform -translation  $randnumberX 5 $randnumberZ;
+    }
+}
+
+CreateForest();
+select -all;
+group -n Forest;
